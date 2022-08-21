@@ -1,15 +1,20 @@
-﻿@model List<Employee>
+@model List<Employee>
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">JSON Data Upload Test</h1>
+    <br/><br/>
+    <h2 class="display-4">Sample Data which will be uploaded</h2>
     <p>
-        <textarea id="txtJson" rows="10" cols="150">
-            @Json.Serialize(Model)
-        </textarea>
+        <textarea id="txtJson" rows="10" cols="150">@Json.Serialize(Model)</textarea>
         <input type="button" value="Submit" id="btnSubmit"/>
+    </p>
+    
+    <h2 class="display-4">Uploaded and returned back by controller action</h2>
+    <p>
+        <textarea id="txtJsonReturned" rows="10" cols="150"></textarea>
     </p>
 </div>
