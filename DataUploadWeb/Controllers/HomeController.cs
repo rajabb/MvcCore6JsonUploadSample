@@ -1,4 +1,4 @@
-﻿using DataUploadWeb.Models;
+using DataUploadWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -17,9 +17,10 @@ namespace DataUploadWeb.Controllers
         {
             var empList = new List<Employee>();
 
-            for (int i = 0; i < 100000; i++)
+            //Tested upto 100000 records which make it around 10MB request
+            for (int i = 0; i < 10; i++)
             {
-                empList.Add(new() { Id = i, Name = $"Very Long Emp{i} Name Of Many Characters", DOJ = DateTime.Now.AddDays(-i)});
+                empList.Add(new() { Id = i, Name = $"Very Long Employee Name with Many Characters {i}", DOJ = DateTime.Now.AddDays(-i)});
             }
 
             return View(empList);
