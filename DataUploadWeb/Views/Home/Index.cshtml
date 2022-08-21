@@ -1,0 +1,15 @@
+﻿@model List<Employee>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>
+        <textarea id="txtJson" rows="10" cols="150">
+            @Json.Serialize(Model)
+        </textarea>
+        <input type="button" value="Submit" id="btnSubmit"/>
+    </p>
+</div>
